@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change BackgoundColor</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+ body{
+    background-color: rgb(82, 74, 74);
+ }
+ .button-wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+ }
+ .Button{
+    width: 10rem;
+    height: 10rem;
+    margin: auto;
+    border: 2px solid black;
+    
+ }
+ #red{
+   background-color: red;
+ }
+ #gold{
+   background-color: gold;
+ }
+ #blue{
+   background-color:blue;
+ }
+ #green{
+   background-color: green;
+ }
+   
+    </style>
+</head>
+<body  >
+    <div class="button-wrapper">
+        <div class="Button" id="red" >Red</div>
+        <div class="Button" id="gold">Gold</div>
+        <div class="Button" id="blue">Blue</div>
+        <div class="Button" id="green">green</div>
+    </div>
+
+</body>
+<script>
+ const Body = document.querySelector("body");
+ const button =document.querySelectorAll(".Button");
+ const btn= button.forEach((btn)=>{
+        
+          btn.addEventListener('click',function(e){
+          
+            switch (e.target.id) {
+                case "red":
+                    Body.style.backgroundColor =("red")
+                    break;
+                case "gold":
+                    Body.style.backgroundColor =("gold")
+                    break;
+                case "blue":
+                    Body.style.backgroundColor =("blue")
+                    break;
+                case "green":
+                    Body.style.backgroundColor =("green")
+                    break;
+            
+                default:
+                    break;
+            }
+           
+      })
+      });
+      
+</script>
+</html>
