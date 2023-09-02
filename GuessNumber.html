@@ -112,7 +112,7 @@
           <div class="hint-box"></div>
           <div id="remain"></div>
 
-       </div>helo
+       </div>
         <!-- <button id="restartBtn">Restart</button> -->
         <div class="result"></div>
       </div>
@@ -143,7 +143,10 @@
         e.preventDefault();
         let guess = parseInt(UserInput.value);
         validation(guess);
+        form.reset();
+        guess="";
       });
+    
     }
     
    
