@@ -1,69 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BMI calculator</title>
     <style>
-        body{
-            width:100% ;
-            height: 100vh;
-            
-            display: flex;
-            margin: 0;
-            padding: 0;
-            justify-content: center;
-            align-items: center;
-        }
-        .form-section{
-         width: 20rem;
-         height: 20rem;
-         background-color: rgb(68, 79, 79);
-         
-        }
-        form {
-            margin:1rem 1rem;
-             
-        }
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        color: #fff;
+        align-items: center;
+        background-color: rgb(57, 54, 54);
+      }
+      h2 {
+        text-align: center;
+        text-decoration: underline;
+      }
+      .wapper {
+        width: 30%;
+        height: 50vh;
+        background-color: rgb(4, 106, 137);
+      }
+      form {
+        margin: 3rem 1rem;
+        text-align: center;
+      }
+      button {
+        margin-top: 2rem;
+        text-align: center;
+        padding: 0.5rem 1rem;
+      }
+      .result-show {
+        text-align: center;
+      }
     </style>
-</head>
-<body>
-    <div class="form-section">
-    <form >
-        <label for="weight" >weight in kg :</label>
-        <input type="text" id="weight"><br>
+  </head>
+  <body>
+    <div class="wapper">
+      <h2>BMI calculater</h2>
+      <form>
+        <label for="weight">Weight in Kg :</label>
+        <input
+          type="text"
+          id="weight"
+          placeholder="Enter your height"
+          required
+        />
+        <br />
+        <br />
+        <label for="height">Height in Cm :</label>
+        <input
+          type="text"
+          id="height"
+          placeholder="Enter your height"
+          required
+        />
+        <br />
+        <button type="submit" id="btn">Submit</button>
+      </form>
+      <div class="result-show"></div>
+    </div>
+  </body>
+  <script>
+    const results = document.querySelector(".result-show");
+    const form = document.querySelector("form");
 
-        <label  for="height">height in cm :</label>
-        <input type="text" id="height"><br>
-        <button type="submit" id="btn" >Submit</button>
-    </form>
-    <div class="result-show"></div>
-</div>
-<script>
-   const results = document.querySelector(".result-show")
-   const form = document.querySelector("form")
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
 
-   form.addEventListener("submit",function(e){
-    console.log(e);
-    e.preventDefault()
-  
-    const weight=  parseInt(document.querySelector("#weight").value)
-    const height= parseInt(document.querySelector("#height").value)
+      const weight = parseInt(document.querySelector("#weight").value);
+      const height = parseInt(document.querySelector("#height").value);
 
-      
-    if ( weight==="" ||weight <= 0||isNaN(weight)) {
-        results.innerHTML =` Please Enter the valid weight ${weight}`
-    }
-    else if(height ==="" ||height <=0 ||isNaN(height)){
-        results.innerHTML =`Please Enter the valid height${height} `
-
-    }
-    else{
-    const Bmi = (weight/((height*height)/10000)).toFixed(2)
-      
-     results.innerHTML =`${Bmi}`;
-    }
-   })
-</script>
-</body>
+      if (weight === "" || weight <= 0 || isNaN(weight)) {
+        results.innerHTML = ` Please Enter the valid weight`;
+      } else if (height === "" || height <= 0 || isNaN(height)) {
+        results.innerHTML = `Please Enter the valid height `;
+      } else {
+        const Bmi = (weight / ((height * height) / 10000)).toFixed(2);
+        results.innerHTML = `${Bmi}`;
+      }
+      form.reset();
+    });
+  </script>
 </html>
