@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    width: 100%;
+    height: 100vh;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .clock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height: 80%;
+    flex-direction: column;
+  }
+  #para {
+    width: 10rem;
+    height: 5rem;
+    color: aliceblue;
+    background-color: goldenrod;
+    text-align: center;
+    line-height: 5rem;
+    font-size: 2rem;
+    padding: 1rem 2rem;
+  }
+  
